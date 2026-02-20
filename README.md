@@ -22,3 +22,8 @@ Exercise files for Front-End Development FED27 module at Hyper Island.
 2. Commit your changes.
 3. Push to your forked repository.
 4. Submit a pull request for review.
+
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main

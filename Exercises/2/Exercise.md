@@ -44,8 +44,8 @@ Try to predict the output of each code snippet **before** running it. Then expla
 **Snippet A:**
 
 ```javascript
-console.log(a);
-console.log(b);
+console.log(a); // undefined variable hoisted without value
+console.log(b); // reference error
 var a = 1;
 let b = 2;
 ```
@@ -53,8 +53,8 @@ let b = 2;
 **Snippet B:**
 
 ```javascript
-sayHello();
-sayGoodbye();
+sayHello(); // Hello!
+sayGoodbye(); // type error, { sayGoodbye is not a function } sayGoodbye hoisted as undefined
 
 function sayHello() {
     console.log('Hello!');
@@ -76,7 +76,7 @@ function foo() {
     console.log(x);
 }
 
-foo();
+foo(); // underfined, 20
 ```
 
 ## Closure
@@ -117,9 +117,22 @@ for (var i = 1; i <= 3; i++) {
     }, i * 1000);
 }
 // Expected: 1, 2, 3 (one per second)
-// Actual: ???
+// Actual: ??? 3, 4, 4, 4
 ```
 
 **Part B:** Fix the code using a closure (without changing `var` to `let`).
+
+```javascript
+
+for (var i = 1; i <= 3; i++) {
+    function iife (j) {
+        setTimeout(() => {
+            console.log(j);
+        }, j * 1000);
+    }
+    iife(i);
+}
+```
+
 
 **Part C:** Fix the code by using `let` instead.
