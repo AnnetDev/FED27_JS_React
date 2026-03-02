@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="click-area" style="width: 300px; height: 200px; background: lightblue;">
+        Click anywhere in this box
+    </div>
+    <p id="click-info"></p>
+
+    <ul id="menu">
+        <li data-action="home">Home</li>
+        <li data-action="about">About</li>
+        <li data-action="contact">Contact</li>
+    </ul>
+    <p id="selected"></p>
+
+    <input type="text" id="todo-input" placeholder="Add a todo" />
+    <button id="add-btn">Add</button>
+    <ul id="todo-list"></ul>
+
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-id="1">
+                <td>Alice</td>
+                <td>alice@example.com</td>
+            </tr>
+            <tr data-id="2">
+                <td>Bob</td>
+                <td>bob@example.com</td>
+            </tr>
+            <tr data-id="3">
+                <td>Charlie</td>
+                <td>charlie@example.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="selected-row"></p>
+
+    <a href="https://example.com" id="custom-link">Click for custom action</a>
+    <p id="link-message"></p>
+
+    <div id="outer" style="padding: 50px; background: lightcoral;">
+        Outer
+        <div id="inner" style="padding: 30px; background: lightgreen;">
+            Inner
+            <button id="btn">Button</button>
+        </div>
+    </div>
+    <p id="log"></p>
+    <script src="ex4.js"></script>
+</body>
+
+</html>

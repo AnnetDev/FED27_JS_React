@@ -118,6 +118,9 @@ for (var i = 1; i <= 3; i++) {
 }
 // Expected: 1, 2, 3 (one per second)
 // Actual: ??? 3, 4, 4, 4
+
+// var имеет функциональную область видимости (не блочную), поэтому все три callback'а замыкаются на одну и ту же переменную i.
+// К моменту выполнения таймеров цикл уже завершился, и i = 4.
 ```
 
 **Part B:** Fix the code using a closure (without changing `var` to `let`).
@@ -133,6 +136,6 @@ for (var i = 1; i <= 3; i++) {
     iife(i);
 }
 ```
-
+<!-- IFE — захватывает текущее значение i: -->
 
 **Part C:** Fix the code by using `let` instead.
